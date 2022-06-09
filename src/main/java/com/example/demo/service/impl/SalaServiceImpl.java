@@ -20,18 +20,18 @@ public class SalaServiceImpl implements SalaService{
 	@Qualifier("salaRepository")
 	private SalaRepository SalaRepository;
 
-	public SalaModel transform(Sala Sala) 
+	public SalaModel transform(Sala Sala)
 	{
 		ModelMapper modelmapper = new ModelMapper();
 		return modelmapper.map(Sala, SalaModel.class);
 	}
-	
+
 	public Sala transform(SalaModel Salamodel)
 	{
 		ModelMapper modelMapper = new ModelMapper();
 		return modelMapper.map(Salamodel, Sala.class);
 	}
-	
+
 	public List<SalaModel> listAllSalas() {
 		return SalaRepository.findAll().stream()
 				.map(c->transform(c)).collect(Collectors.toList());
@@ -44,5 +44,5 @@ public class SalaServiceImpl implements SalaService{
 		return SalaRepository.findById(id).stream()
 				.map(c->transform(c)).collect(Collectors.toList());
 	}
-	
+
 }
