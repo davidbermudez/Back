@@ -38,11 +38,4 @@ public class SalaServiceImpl implements SalaService{
 
 	}
 
-
-	@Override
-	public List<SalaModel> findById(int id) {
-		return SalaRepository.findById(id).stream()
-				.map(c->transform(c)).collect(Collectors.toList());
-	}
-
 }

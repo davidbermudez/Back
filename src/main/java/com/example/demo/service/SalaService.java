@@ -11,6 +11,5 @@ public interface SalaService {
 	List<SalaModel> listAllSalas();
 	SalaModel transform(Sala sala);
 	Sala transform(SalaModel SalaModel); 
-	List<SalaModel> findById(int id);
 	
 }
